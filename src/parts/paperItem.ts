@@ -4,6 +4,7 @@ import { Tween } from "../core/tween";
 import { Rect } from "../libs/rect";
 import { Util } from "../libs/util";
 import { MousePointer } from "../core/mousePointer";
+import { Func } from "../core/func";
 
 // -----------------------------------------
 //
@@ -58,7 +59,7 @@ export class PaperItem extends MyDisplay {
 
     // const mx = MousePointer.instance.easeNormal.x
     const my = MousePointer.instance.easeNormal.y
-    this.rot.y = Math.sin(Util.radian(this._id * 20 + this._c * 10)) * Util.map(my, 0, 90, -1, 1)
+    this.rot.y = Math.sin(Util.radian(this._id * 20 + this._c * 10)) * Util.map(my, 0, Func.instance.val(45, 90), -1, 1)
 
     Tween.instance.set(this.el, {
       width: size,

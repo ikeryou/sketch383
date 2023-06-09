@@ -3,7 +3,7 @@ import { Conf } from './conf';
 
 export class Func {
   private static _instance: Func;
-  private _useFullScreen: boolean = Conf.instance.IS_SP;
+  private _useFullScreen: boolean = false;
 
   constructor() {}
 
